@@ -1,0 +1,16 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+QuadraticMoat.finiteDivisorNoWalkEndpoint_proved (K : Type) [Field K] [NumberField K]
+  (hdegree : Module.finrank ℚ K = 2) : QuadraticMoat.FiniteDivisorNoWalkEndpoint K
+QuadraticMoat.uniformEndpoint_proved (K : Type) [Field K] [NumberField K] (hdegree : Module.finrank ℚ K = 2) :
+  QuadraticMoat.UniformEndpoint K
+QuadraticMoat.allQuadraticEndpoint_proved : QuadraticMoat.AllQuadraticEndpoint
+QuadraticMoat.irreducible_components_uniformly_bounded (K : Type) [Field K] [NumberField K]
+  (hdegree : Module.finrank ℚ K = 2) (D : ℝ) :
+  ∃ B,
+    ∀ (a : QuadraticMoat.IrreducibleVertex K),
+      (QuadraticMoat.component K D a).Finite ∧ (QuadraticMoat.component K D a).ncard ≤ B
+'QuadraticMoat.finiteDivisorNoWalkEndpoint_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.uniformEndpoint_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.allQuadraticEndpoint_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.irreducible_components_uniformly_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]

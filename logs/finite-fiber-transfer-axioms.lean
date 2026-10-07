@@ -1,0 +1,2 @@
+import QuadraticMoat.FiniteFiberTransfer
+#print axioms QuadraticMoat.regularized_limit_of_norm_fiber_formula

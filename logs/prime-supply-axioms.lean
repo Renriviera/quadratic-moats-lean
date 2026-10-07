@@ -1,0 +1,4 @@
+import QuadraticMoat.PrimeSupply
+#print axioms QuadraticMoat.log_dedekindZeta_regularized_limit
+#print axioms QuadraticMoat.scaled_difference_limit_of_regularization
+#print axioms QuadraticMoat.eventually_window_mass_of_moments

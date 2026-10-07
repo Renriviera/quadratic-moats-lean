@@ -1,0 +1,3 @@
+import QuadraticMoat.PrimeIdealRegularization
+#print axioms QuadraticMoat.log_dedekindZeta_re_eq_prime_logs
+#print axioms QuadraticMoat.all_primeIdeal_regularized_limit

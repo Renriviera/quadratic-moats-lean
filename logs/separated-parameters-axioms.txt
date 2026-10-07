@@ -1,0 +1,3 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+'QuadraticMoat.PrimeFamily.exists_separated_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]

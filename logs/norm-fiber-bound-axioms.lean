@@ -1,0 +1,2 @@
+import QuadraticMoat.NormFiberBound
+#print axioms QuadraticMoat.primeNormMultiplicity_le_finrank

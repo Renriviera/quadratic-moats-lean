@@ -1,0 +1,4 @@
+import QuadraticMoat.PrimeMoments
+#print axioms QuadraticMoat.summable_log_weight
+#print axioms QuadraticMoat.log_moment_limit_of_regularization
+#print axioms QuadraticMoat.eventually_log_window_mass_of_regularization

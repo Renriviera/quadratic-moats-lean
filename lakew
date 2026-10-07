@@ -3,4 +3,5 @@ set -eu
 quadratic_project_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 export ELAN_HOME="$quadratic_project_dir/.toolchains/elan"
 cd "$quadratic_project_dir"
-exec /Users/romainpopescu/.elan/bin/lake "$@"
+quadratic_lake_bin="${QUADRATIC_MOAT_LAKE:-$HOME/.elan/bin/lake}"
+exec "$quadratic_lake_bin" "$@"

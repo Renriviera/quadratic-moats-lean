@@ -1,0 +1,228 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+⚠ [9214/9866] Replayed QuadraticMoat.PlanarContext
+warning: QuadraticMoat/PlanarContext.lean:19:0: Definition `QuadraticMoat.quadraticPlanarContext` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+⚠ [9215/9866] Replayed QuadraticMoat.ResidueQuotient
+warning: QuadraticMoat/ResidueQuotient.lean:11:8: automatically included section variable(s) unused in theorem `QuadraticMoat.mem_multiples`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/ResidueQuotient.lean:25:8: automatically included section variable(s) unused in theorem `QuadraticMoat.ringResidue_add`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/ResidueQuotient.lean:28:8: automatically included section variable(s) unused in theorem `QuadraticMoat.ringResidue_sub`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/ResidueQuotient.lean:31:8: automatically included section variable(s) unused in theorem `QuadraticMoat.ringResidue_zero`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9216/9866] Replayed QuadraticMoat.PlaneLattice
+warning: QuadraticMoat/PlaneLattice.lean:32:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9217/9866] Replayed QuadraticMoat.WalkWords
+warning: QuadraticMoat/WalkWords.lean:15:0: automatically included section variable(s) unused in theorem `QuadraticMoat.incrementWord_sum`:
+  [NumberField K]
+  P
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] P in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/WalkWords.lean:159:0: automatically included section variable(s) unused in theorem `QuadraticMoat.true_residue_no_hit`:
+  P
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit P in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/WalkWords.lean:173:0: automatically included section variable(s) unused in theorem `QuadraticMoat.residueCode_vector_fibers`:
+  P
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit P in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9223/9866] Replayed QuadraticMoat.TimeLaw
+warning: QuadraticMoat/TimeLaw.lean:16:0: automatically included section variable(s) unused in theorem `QuadraticMoat.SplitSieve.pointEntropy_map`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/TimeLaw.lean:30:0: automatically included section variable(s) unused in theorem `QuadraticMoat.shifted_walk_injective`:
+  [NumberField Fld]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField Fld] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9224/9866] Replayed QuadraticMoat.Information
+warning: QuadraticMoat/Information.lean:18:8: automatically included section variable(s) unused in theorem `QuadraticMoat.commonSchedule_bound`:
+  [NumberField Fld]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField Fld] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/Information.lean:26:8: automatically included section variable(s) unused in theorem `QuadraticMoat.commonSchedule_cons`:
+  [NumberField Fld]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField Fld] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/Information.lean:68:0: automatically included section variable(s) unused in theorem `QuadraticMoat.TimeLaw.advance_difference`:
+  [NumberField Fld]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField Fld] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/Information.lean:86:0: automatically included section variable(s) unused in theorem `QuadraticMoat.SplitSieve.pointEntropy_shift`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/Information.lean:111:0: automatically included section variable(s) unused in theorem `QuadraticMoat.residue_observation_shift`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9225/9866] Replayed QuadraticMoat.MultiscaleSchedule
+warning: QuadraticMoat/MultiscaleSchedule.lean:44:0: automatically included section variable(s) unused in theorem `QuadraticMoat.SplitSieve.pointEntropy_nonneg`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/MultiscaleSchedule.lean:54:8: automatically included section variable(s) unused in theorem `QuadraticMoat.TimeLaw.run_zero`:
+  [NumberField Fld]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField Fld] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/MultiscaleSchedule.lean:56:8: automatically included section variable(s) unused in theorem `QuadraticMoat.TimeLaw.run_succ`:
+  [NumberField Fld]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField Fld] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9228/9866] Replayed QuadraticMoat.EntropyBand
+warning: QuadraticMoat/EntropyBand.lean:96:0: automatically included section variable(s) unused in theorem `QuadraticMoat.ForwardKernel.residue_deficit`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9232/9866] Replayed QuadraticMoat.BatchCertificate
+warning: QuadraticMoat/BatchCertificate.lean:43:0: automatically included section variable(s) unused in theorem `QuadraticMoat.SplitSieve.signed_mem_selectedFactors`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/BatchCertificate.lean:77:0: automatically included section variable(s) unused in theorem `QuadraticMoat.greedy_finite_selection`:
+  [NumberField K]
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/BatchCertificate.lean:101:0: automatically included section variable(s) unused in theorem `QuadraticMoat.precedingFactors_mono`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/BatchCertificate.lean:108:0: automatically included section variable(s) unused in theorem `QuadraticMoat.precedingFactors_succ`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/BatchCertificate.lean:112:0: automatically included section variable(s) unused in theorem `QuadraticMoat.precedingFactors_ne_zero`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9235/9866] Replayed QuadraticMoat.AccurateScales
+warning: QuadraticMoat/AccurateScales.lean:125:0: automatically included section variable(s) unused in theorem `QuadraticMoat.dense_sieve_cap`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/AccurateScales.lean:242:0: automatically included section variable(s) unused in theorem `QuadraticMoat.bandSize_lower_of_scale`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9237/9866] Replayed QuadraticMoat.WindowParameters
+warning: QuadraticMoat/WindowParameters.lean:76:0: automatically included section variable(s) unused in theorem `QuadraticMoat.residueWeight_union_le`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9243/9866] Replayed QuadraticMoat.SeparatedFactors
+warning: QuadraticMoat/SeparatedFactors.lean:10:0: automatically included section variable(s) unused in theorem `QuadraticMoat.precedingFactors_enum_subset`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: QuadraticMoat/SeparatedFactors.lean:30:0: automatically included section variable(s) unused in theorem `QuadraticMoat.precedingFactors_enum_all`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9248/9866] Replayed QuadraticMoat.CommonBlocks
+warning: QuadraticMoat/CommonBlocks.lean:11:0: automatically included section variable(s) unused in theorem `QuadraticMoat.floor_size_lower`:
+  ctx
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit ctx in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9249/9866] Replayed QuadraticMoat.WindowBatch
+warning: QuadraticMoat/WindowBatch.lean:13:16: Variable name `hDscale` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hDscale
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9981/9988] Replayed QuadraticMoat.HilbertSplit
+warning: QuadraticMoat/HilbertSplit.lean:473:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: QuadraticMoat/HilbertSplit.lean:479:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [9984/9988] Replayed QuadraticMoat.PrincipalPrimeFamily
+warning: QuadraticMoat/PrincipalPrimeFamily.lean:67:16: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9986/9988] Built QuadraticMoat.Main (3.4s)
+warning: QuadraticMoat/Main.lean:109:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9987/9988] Built QuadraticMoat (2.9s)
+Build completed successfully (9988 jobs).

@@ -1,5 +1,7 @@
 import QuadraticMoat.SignedResidues
 import QuadraticMoat.KernelComposition
+import QuadraticMoat.PlaneBallCard
+import OAI.NumberTheory.GaussianMoat.EntropyBand
 
 universe uAlpha uOmega uBeta
 
@@ -20,15 +22,15 @@ noncomputable def ForwardKernel.displacementLaw (K : ForwardKernel)
     (z : ℕ → (𝓞 Fld)) {D : ℝ} (hD : 0≤D)
     (hs : ∀ t, dist (z t:ℂ) (z (t+1):ℂ)≤D) (a : ℕ) :
     FinLaw (planeBall (K := Fld) (D*K.bound)) :=
-  (K.law a).map (K.displacementSymbol z hD hs a)
+  (K.law a).map (ForwardKernel.displacementSymbol K z hD hs a)
 
 lemma ForwardKernel.displacementLaw_observe (K : ForwardKernel)
     (z : ℕ → (𝓞 Fld)) {D : ℝ} (hD : 0≤D)
     (hs : ∀ t, dist (z t:ℂ) (z (t+1):ℂ)≤D) (a : ℕ)
     {α : Type uAlpha} [Fintype α] (f : (𝓞 Fld) → α) :
-    (K.displacementLaw z hD hs a).map (fun d => f (d.val+z a))=
+    (ForwardKernel.displacementLaw K z hD hs a).map (fun d => f (d.val+z a))=
       (K.law a).map (fun i => f (z (a+i.val))) := by
-  rw [displacementLaw,FinLaw.map_comp]
+  rw [ForwardKernel.displacementLaw,FinLaw.map_comp]
   congr 1
   funext i
   simp only [Function.comp_def,displacementSymbol,sub_add_cancel]
@@ -36,9 +38,9 @@ lemma ForwardKernel.displacementLaw_observe (K : ForwardKernel)
 theorem continuation_data_entropy {Ω : Type uOmega} [Fintype Ω] (p : FinLaw Ω)
     (a : Ω → ℕ) (K : ForwardKernel) (z : ℕ → (𝓞 Fld)) {D : ℝ}
     (hD : 1≤D) (hs : ∀ t, dist (z t:ℂ) (z (t+1):ℂ)≤D) (hK : 1≤K.bound) (n : ℕ) :
-    (p.joint (fun ω => (K.displacementLaw z (by linarith only [hD]) hs (a ω)).iid n)).Hf
+    (p.joint (fun ω => (ForwardKernel.displacementLaw K z (by linarith only [hD]) hs (a ω)).iid n)).Hf
       Prod.snd ≤ n*(Real.log 36+2*Real.log (D*K.bound)) := by
-  let q := fun ω => (K.displacementLaw z (by linarith only [hD]) hs (a ω)).iid n
+  let q := fun ω => (ForwardKernel.displacementLaw K z (by linarith only [hD]) hs (a ω)).iid n
   have hh := (p.joint q).Hf_le_log_card_type Prod.snd
   simp only [Fintype.card_fun,Fintype.card_fin,Fintype.card_coe,Nat.cast_pow,Real.log_pow] at hh
   have hR : 1≤D*K.bound := one_le_mul_of_one_le_of_one_le hD (by exact_mod_cast hK)
@@ -52,10 +54,10 @@ theorem continuation_data_entropy {Ω : Type uOmega} [Fintype Ω] (p : FinLaw Ω
 lemma continuation_pointEntropy {Ω : Type uOmega} [Fintype Ω] (s : SplitSieve Fld)
     (p : FinLaw Ω) (a : Ω → ℕ) (K : ForwardKernel) (z : ℕ → (𝓞 Fld)) {D : ℝ}
     (hD : 0≤D) (hs : ∀ t, dist (z t:ℂ) (z (t+1):ℂ)≤D) (n b : ℕ) :
-    s.pointEntropy (p.joint (fun ω => (K.displacementLaw z hD hs (a ω)).iid n))
+    s.pointEntropy (p.joint (fun ω => (ForwardKernel.displacementLaw K z hD hs (a ω)).iid n))
       (fun v => z (a v.1)) b = s.pointEntropy p (fun ω => z (a ω)) b := by
   let q : Ω → FinLaw (Fin n → planeBall (K := Fld) (D*K.bound)) := fun ω =>
-    (K.displacementLaw z hD hs (a ω)).iid n
+    (ForwardKernel.displacementLaw K z hD hs (a ω)).iid n
   exact s.pointEntropy_joint_fst p q (fun ω => z (a ω)) b
 
 noncomputable def ForwardKernel.relativeResidueLaw (K : ForwardKernel)
@@ -65,18 +67,18 @@ noncomputable def ForwardKernel.relativeResidueLaw (K : ForwardKernel)
 lemma ForwardKernel.displacementLaw_residue (K : ForwardKernel)
     (s : SplitSieve Fld) (z : ℕ → (𝓞 Fld)) {D : ℝ} (hD : 0≤D)
     (hs : ∀ t, dist (z t:ℂ) (z (t+1):ℂ)≤D) (a : ℕ) (i : s.SignedIndex) :
-    (K.displacementLaw z hD hs a).map (fun d => s.residue i d.val)=
-      K.relativeResidueLaw s z a i := by
+    (ForwardKernel.displacementLaw K z hD hs a).map (fun d => s.residue i d.val)=
+      ForwardKernel.relativeResidueLaw K s z a i := by
   rw [ForwardKernel.displacementLaw,FinLaw.map_comp]
   rfl
 
 lemma ForwardKernel.then_relativeResidueLaw (K R : ForwardKernel)
     (s : SplitSieve Fld) (z : ℕ → (𝓞 Fld)) {D : ℝ} (hD : 0≤D)
     (hs : ∀ t, dist (z t:ℂ) (z (t+1):ℂ)≤D) (a : ℕ) (i : s.SignedIndex) :
-    (K.then R).relativeResidueLaw s z a i =
-      ((K.law a).joint (fun t => R.displacementLaw z hD hs (a+t.val))).map
+    ForwardKernel.relativeResidueLaw (K.then R) s z a i =
+      ((K.law a).joint (fun t => ForwardKernel.displacementLaw R z hD hs (a+t.val))).map
         (fun v => s.residue i (z (a+v.1.val)-z a)+s.residue i v.2.val) := by
-  unfold relativeResidueLaw ForwardKernel.then
+  unfold ForwardKernel.relativeResidueLaw OAI.GaussianMoat.ForwardKernel.then
   rw [FinLaw.map_comp,FinLaw.joint_observation_fun,FinLaw.joint_observation_fun]
   congr 1
   funext t
@@ -97,7 +99,7 @@ lemma ForwardKernel.residue_deficit (K : ForwardKernel)
     (hH : (1-e)*(b:ℝ)*s.meanLog≤ s.pointEntropy (K.law a) (fun t => z (a+t.val)) b) :
     letI := s.signedIndex_nonempty hne
     (∑ i : s.SignedIndex, FinLaw.uniform _ i*(Real.log (Fintype.card (s.Residue i))-
-      (K.relativeResidueLaw s z a i).entropy))≤e*s.meanLog := by
+      (ForwardKernel.relativeResidueLaw K s z a i).entropy))≤e*s.meanLog := by
   let := s.signedIndex_nonempty hne
   have hh := s.signed_coverage_deficit hne (K.law a) (fun t => z (a+t.val))
     (fun _ => ()) (z a) hb hbk hH (E := 0) (by rw [FinLaw.Hf_const])
@@ -113,13 +115,13 @@ theorem ForwardKernel.coverage_base (K : ForwardKernel)
     (hH : (1-e)*(b:ℝ)*s.meanLog≤ s.pointEntropy (K.law a) (fun t => z (a+t.val)) b) :
     letI := s.signedIndex_nonempty hne
     (FinLaw.uniform s.SignedIndex).prob (fun i =>
-      u i≤((K.relativeResidueLaw s z a i).lowResidues τ).card) ≤e*s.meanLog/c := by
+      u i≤((ForwardKernel.relativeResidueLaw K s z a i).lowResidues τ).card) ≤e*s.meanLog/c := by
   let := s.signedIndex_nonempty hne
-  apply FinLaw.lowResidues_base s.Residue (FinLaw.uniform _) (K.relativeResidueLaw s z a) u
+  apply FinLaw.lowResidues_base s.Residue (FinLaw.uniform _) (ForwardKernel.relativeResidueLaw K s z a) u
     hτ hc
   · intro i
     simpa only [s.residue_card] using hu i
-  · exact K.residue_deficit s hne z a hb hbk hH
+  · exact ForwardKernel.residue_deficit K s hne z a hb hbk hH
 
 lemma ForwardKernel.coverage_data_deficit (K R : ForwardKernel)
     (s : SplitSieve Fld) (hne : s.primes.Nonempty) (z : ℕ → (𝓞 Fld)) {D : ℝ}
@@ -128,12 +130,12 @@ lemma ForwardKernel.coverage_data_deficit (K R : ForwardKernel)
     (hH : (1-e)*(b:ℝ)*s.meanLog≤ s.pointEntropy (K.law a) (fun t => z (a+t.val)) b) :
     letI := s.signedIndex_nonempty hne
     (∑ i : s.SignedIndex, FinLaw.uniform _ i*(Real.log (Fintype.card (s.Residue i))-
-      ((K.law a).joint (fun t => (R.displacementLaw z (by linarith only [hD]) hs (a+t.val)).iid n)).cHf
+      ((K.law a).joint (fun t => (ForwardKernel.displacementLaw R z (by linarith only [hD]) hs (a+t.val)).iid n)).cHf
         (fun v => s.residue i (z (a+v.1.val)-z a)) Prod.snd)) ≤
       e*s.meanLog+n*(Real.log 36+2*Real.log (D*R.bound))/b := by
   let := s.signedIndex_nonempty hne
   let q := fun t : Fin (K.bound+1) =>
-    (R.displacementLaw z (by linarith only [hD]) hs (a+t.val)).iid n
+    (ForwardKernel.displacementLaw R z (by linarith only [hD]) hs (a+t.val)).iid n
   let P := (K.law a).joint q
   have he : s.pointEntropy P (fun v => z (a+v.1.val)) b =
       s.pointEntropy (K.law a) (fun t => z (a+t.val)) b :=
@@ -153,7 +155,7 @@ theorem ForwardKernel.coverage_backward (K R : ForwardKernel)
     (hH : (1-e)*(b:ℝ)*s.meanLog≤ s.pointEntropy (K.law a) (fun t => z (a+t.val)) b)
     (hnext : ∀ t, letI := s.signedIndex_nonempty hne
       (FinLaw.uniform s.SignedIndex).prob (fun i => u' i≤
-        ((R.relativeResidueLaw s z t i).lowResidues (τ+4*δ)).card)≤η')
+        ((ForwardKernel.relativeResidueLaw R s z t i).lowResidues (τ+4*δ)).card)≤η')
     (hsmall : η'+ε≤η*δ/2) (hscale : 2*(1-Real.log (η*δ/2))≤v)
     (hgap : e*s.meanLog+n*(Real.log 36+2*Real.log (D*R.bound))/b<η*δ*v/4)
     (hc : ∀ i, 1≤c i) (hv : ∀ i, v≤Real.log (s.signedPrime i)-Real.log (c i))
@@ -162,18 +164,18 @@ theorem ForwardKernel.coverage_backward (K R : ForwardKernel)
       (-(n:ℝ)*δ^2*u i/(2*(s.signedPrime i:ℝ)))≤ε) :
     letI := s.signedIndex_nonempty hne
     (FinLaw.uniform s.SignedIndex).prob (fun i =>
-      u i≤(((K.then R).relativeResidueLaw s z a i).lowResidues τ).card)≤η := by
+      u i≤((ForwardKernel.relativeResidueLaw (K.then R) s z a i).lowResidues τ).card)≤η := by
   let := s.signedIndex_nonempty hne
   let w := FinLaw.uniform s.SignedIndex
-  let q := fun t : Fin (K.bound+1) => R.displacementLaw z (by linarith only [hD]) hs (a+t.val)
+  let q := fun t : Fin (K.bound+1) => ForwardKernel.displacementLaw R z (by linarith only [hD]) hs (a+t.val)
   have hnxt : (∑ i, w i*(K.law a).prob (fun t => u' i≤
       (((q t).map (fun d => s.residue i d.val)).lowResidues (τ+4*δ)).card))≤η' := by
     simp only [q,ForwardKernel.displacementLaw_residue,FinLaw.prob,Finset.mul_sum]
     rw [Finset.sum_comm]
     have he : (∑ t, ∑ i, w i*(if u' i≤
-        ((R.relativeResidueLaw s z (a+t.val) i).lowResidues (τ+4*δ)).card then K.law a t else 0)) =
+        ((ForwardKernel.relativeResidueLaw R s z (a+t.val) i).lowResidues (τ+4*δ)).card then K.law a t else 0)) =
         ∑ t, K.law a t*w.prob (fun i => u' i≤
-          ((R.relativeResidueLaw s z (a+t.val) i).lowResidues (τ+4*δ)).card) := by
+          ((ForwardKernel.relativeResidueLaw R s z (a+t.val) i).lowResidues (τ+4*δ)).card) := by
       unfold FinLaw.prob
       simp only [Finset.mul_sum]
       apply Finset.sum_congr rfl
@@ -185,13 +187,13 @@ theorem ForwardKernel.coverage_backward (K R : ForwardKernel)
     have hh := Finset.sum_le_sum (s := Finset.univ) (fun t _ =>
       mul_le_mul_of_nonneg_left (hnext (a+t.val)) ((K.law a).nonneg t))
     simpa only [← Finset.sum_mul,(K.law a).sum_one,one_mul] using hh
-  have hd := K.coverage_data_deficit R s hne z hD hs hR a n hb hbk hH
+  have hd := ForwardKernel.coverage_data_deficit K R s hne z hD hs hR a n hb hbk hH
   have hh := FinLaw.lowResidues_backward s.Residue w (K.law a) q
     (fun i t => s.residue i (z (a+t.val)-z a)) (fun i d => s.residue i d.val)
     u u' c hn hτ hτ1 hδ hδ1 hε hη hu hnxt hsmall hscale hgap hd hc
     (by intro i; simpa only [s.residue_card] using hv i) hu'
     (by intro i; simpa only [s.residue_card] using herr i)
-  have he (i : s.SignedIndex) := K.then_relativeResidueLaw R s z
+  have he (i : s.SignedIndex) := ForwardKernel.then_relativeResidueLaw K R s z
     (by linarith only [hD]) hs a i
   simpa only [he] using hh
 
@@ -260,18 +262,18 @@ theorem CoverageDerivation.sound {s : SplitSieve Fld} {D T : ℝ} {N : ℕ}
     (hpT : ∀ p∈s.primes, T≤(p:ℝ) ∧ (p:ℝ)≤2*T) (hL : 1≤ s.meanLog) :
     ∀ a, letI := s.signedIndex_nonempty hne
       (FinLaw.uniform s.SignedIndex).prob (fun i => u i≤
-        (((commonSchedule z ns N).relativeResidueLaw s z a i).lowResidues τ).card)≤η := by
+        ((ForwardKernel.relativeResidueLaw (commonSchedule z ns N) s z a i).lowResidues τ).card)≤η := by
   let := s.signedIndex_nonempty hne
   induction q with
   | base ns b τ c e η u band hb hbk hτ hc hu hη =>
     intro a
-    exact ((commonSchedule z ns N).coverage_base s hne z a hb hbk u hτ hc hu
+    exact (ForwardKernel.coverage_base (commonSchedule z ns N) s hne z a hb hbk u hτ hc hu
       (band.sound hne z hz hD hDscale hT hs hpT hL a)).trans hη
   | step ns rest b n τ δ ε η η' e v u u' c band next hR hn hb hbk hτ hτ1 hδ hδ1
       hε hη hu hsmall hscale hgap hc hv hu' herr ih =>
     intro a
     rw [commonSchedule_append]
-    apply (commonSchedule z ns 0).coverage_backward (commonSchedule z rest N) s hne z
+    apply ForwardKernel.coverage_backward (commonSchedule z ns 0) (commonSchedule z rest N) s hne z
       hD hs (by simpa only [commonSchedule_bound] using hR) a u u' c hn hb hbk hτ hτ1 hδ hδ1 hε hη hu
       (band.sound hne z hz hD hDscale hT hs hpT hL a) ih hsmall hscale
     · simpa only [commonSchedule_bound,Nat.cast_add] using hgap

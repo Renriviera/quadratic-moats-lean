@@ -1,10 +1,8 @@
-# Active work assignments
+# Completed work assignments
 
-- Parent Astra: PlaneLattice/WalkWords (built); TimeLaw/Information/MultiscaleSchedule/KernelComposition; final integration and checkpoints.
-- close_pairs Sol: HilbertSplit final CFT/count composition, DyadicSieve and residueWeight APIs.
-- prime_supply Sol: PrincipalPrimeFamily, EntropyBand, AccurateScales, BatchParameters and remaining window/batch scalar-to-native integration.
-- restoration Sol: SignedSieve/SignedGeometry/FreshEntropy/PointEnrichment/SignedResidues (built); PassingInformation/WalkPackage/InformationTelescope.
+- Parent: pinned build environment, additive/norm interfaces, native walk/time/multiscale kernels, final integration, final audit, durable checkpoint.
+- close_pairs (GPT-6.1 Sol): close pairs, split arithmetic, Hilbert fiber formula, dyadic sieves, certificates, factor and smoothing bounds.
+- prime_supply (GPT-6.1 Sol): analytic regularization, moments, unconditional prime family, dense bins, scalar parameters, accurate scales and window batch construction.
+- restoration (GPT-6.1 Sol): full Minkowski model, graph restoration/periodicity, signed sieve geometry, fresh entropy, residue packages and information telescope; independent semantic review.
 
-Coordinate shared interfaces. Field type in new ports is Fld; [ctx : PlanarContext Fld] carries additive plane embedding. ForwardKernel and TimeLaw types can reuse original Gaussian namespace types (they contain no Gaussian data); native walk-dependent methods must be proved for O_K.
-
-Do not use sorry, admit, opaque mathematical axioms, unsafe proofs, or weaken the final statement. Temporary exploratory files must be clearly marked and excluded from completed claims.
+All proof tasks are complete. No pending assumptions or unfinished proof declarations in the exported endpoint. Future changes should preserve the final axiom audit and exact Model semantics.

@@ -141,4 +141,30 @@ lemma dyadicSieve_available_weight (F : PrimeFamily)
   rw [pow_succ] at hp
   nlinarith only [hh, hp]
 
+lemma residue_cIf_finset_union {Ω : Type*} {ι : Type*} {β : Type*} [Fintype Ω] [Fintype ι]
+    (p : FinLaw Ω) (z : Ω → (𝓞 K)) (Y : Ω → β)
+    (F : Finset (𝓞 K)) (f : ι → (𝓞 K)) :
+    p.cIf (fun ω (g : ↥(F∪Finset.univ.image f)) => residueCode g.val (z ω)) Y
+      (fun ω (g : F) => residueCode g.val (z ω))=
+    p.cIf (fun ω i => residueCode (f i) (z ω)) Y
+      (fun ω (g : F) => residueCode g.val (z ω)) := by
+  rw [p.cIf_comm,p.cIf_comm (fun ω i => residueCode (f i) (z ω))]
+  unfold FinLaw.cIf
+  congr 1
+  apply p.cHf_congr_fibers
+  · intro ω ν; rfl
+  · intro ω ν
+    simp only [Prod.mk.injEq]
+    constructor
+    · rintro ⟨hO,hU⟩
+      refine ⟨hO,funext fun i => ?_⟩
+      exact congrFun hU ⟨f i,Finset.mem_union_right F (Finset.mem_image.mpr ⟨i,Finset.mem_univ _,rfl⟩)⟩
+    · rintro ⟨hO,hU⟩
+      refine ⟨hO,funext fun g => ?_⟩
+      rcases Finset.mem_union.mp g.property with hg|hg
+      · exact congrFun hO ⟨g.val,hg⟩
+      · obtain ⟨i,_,hi⟩ := Finset.mem_image.mp hg
+        simpa only [hi] using congrFun hU i
+
+
 end QuadraticMoat

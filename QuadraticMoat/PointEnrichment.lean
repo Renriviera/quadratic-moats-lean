@@ -69,6 +69,7 @@ lemma differenceRepresentative_spec (z : ℕ → (𝓞 K)) (n : ℕ)
     z (differenceRepresentative z n d).1.val-z (differenceRepresentative z n d).2.val=d :=
   (difference_exists_pair z n d).choose_spec
 
+omit [NumberField K] ctx in
 lemma differenceRepresentative_injective (z : ℕ → (𝓞 K)) (n : ℕ) :
     Function.Injective (differenceRepresentative z n) := by
   intro d d' hh

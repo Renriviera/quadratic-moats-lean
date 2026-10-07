@@ -39,7 +39,7 @@ theorem TimeLaw.step_enrichment (P : TimeLaw) (s : SplitSieve Fld)
       (fun ij => z (a.val+ij.1.val)) (fun ij => z (a.val+ij.2.val)) b (by omega)) :
     (b:ℝ)*((q-b:ℕ)*F+s.pointEntropy P.law (fun a => z a.val) q-
       2*(Real.log 36+2*Real.log (D*n))) ≤
-      2*(q:ℝ)*s.pointEntropy (P.step z n).law (fun a => z a.val) b := by
+      2*(q:ℝ)*s.pointEntropy (TimeLaw.step P z n).law (fun a => z a.val) b := by
   let K := P.law.joint (fun a => differenceLaw (fun t => z (a.val+t)) n)
   let X := fun v : Fin (P.last+1) × (Fin (n+1) × Fin (n+1)) => z (v.1.val+v.2.1.val)
   let Y := fun v : Fin (P.last+1) × (Fin (n+1) × Fin (n+1)) => z (v.1.val+v.2.2.val)
@@ -62,7 +62,7 @@ theorem TimeLaw.step_enrichment (P : TimeLaw) (s : SplitSieve Fld)
   have hZ := s.pointEntropy_joint_fst P.law
     (fun a => differenceLaw (fun t => z (a.val+t)) n) (fun a => z a.val) q
   rw [hZ] at h
-  have hout : s.pointEntropy (P.step z n).law (fun a => z a.val) b =
+  have hout : s.pointEntropy (TimeLaw.step P z n).law (fun a => z a.val) b =
       s.pointEntropy ((FinLaw.uniform Bool).joint (fun _ => K))
         (fun v => if v.1 then X v.2 else Y v.2) b := by
     change s.pointEntropy (((FinLaw.uniform Bool).joint (fun _ => K)).map

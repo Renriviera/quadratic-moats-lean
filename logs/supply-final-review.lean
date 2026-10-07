@@ -1,0 +1,4 @@
+import QuadraticMoat.Main
+#check QuadraticMoat.allQuadraticEndpoint_proved
+#print axioms QuadraticMoat.allQuadraticEndpoint_proved
+#print axioms QuadraticMoat.uniformEndpoint_proved

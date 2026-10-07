@@ -1,0 +1,2 @@
+import QuadraticMoat.SeparatedParameters
+#print axioms QuadraticMoat.PrimeFamily.exists_separated_parameters

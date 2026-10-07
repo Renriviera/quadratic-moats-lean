@@ -1,0 +1,4 @@
+import QuadraticMoat.HigherDegreeTail
+#print axioms QuadraticMoat.summable_higherDegree_inverseNorm
+#print axioms QuadraticMoat.higherDegree_primeIdeal_series_limit
+#print axioms QuadraticMoat.primeNorm_primeIdeal_regularized_limit

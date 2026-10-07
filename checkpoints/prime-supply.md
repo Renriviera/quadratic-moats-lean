@@ -1,3 +1,27 @@
+## Current status, 2026-10-07
+
+The native quadratic principal-split supply is now fully closed and audited.
+`HilbertSplit.smallHilbert_primeNormMultiplicity_real_off_discriminant` gives
+the exact native small-Hilbert fiber formula. `PrincipalPrimeFamily.lean`
+chooses the extension internally and exports unconditional quadratic
+`principalSplit_regularized_limit`, `principalSplit_window_mass`, and
+`principalSplitPrimeFamily K hdegree`. All headline audits use only the usual
+three axioms. See `checkpoints/principal-prime-family.md` for exact commands.
+
+Generic dense/separated supplied bins and the native entropy/batch parameter
+chain are also built and audited. See `checkpoints/dense-bins.md` and
+`checkpoints/entropy-parameters.md`. `QuadraticMoat.WindowBatch` was built in a
+single authoritative pass (8998 jobs) after native scalar reuse cleanup.
+
+The earlier “remaining arithmetic” descriptions below are historical progress
+records and are superseded by this status. Parent owns the final Main endpoint
+build and audit. Final integration subsequently built successfully (9986 jobs),
+and the supply agent's independent `./lakew env lean logs/supply-final-review.lean`
+checked `allQuadraticEndpoint_proved : AllQuadraticEndpoint` and audited it and
+`uniformEndpoint_proved`: only `propext`, `Classical.choice`, `Quot.sound`.
+The complete unconditional target is therefore now kernel-checked; see parent
+STATUS and final audit logs for the canonical project completion record.
+
 # Principal-split prime supply audit (2026-10-06)
 
 Status: `QuadraticMoat/PrimeSupply.lean` and `QuadraticMoat/PrimeMoments.lean` build successfully. PrimeSupply axiom audit has only propext, Classical.choice, Quot.sound; PrimeMoments audit also passed with only these same standard axioms. No principal-split instantiation is proved yet. No assertion that Dirichlet density implies the required exponential-window mass.

@@ -1,29 +1,14 @@
-# Quadratic moat formalization checkpoint
+# Quadratic moat formalization: complete
 
-Objective: a Lean kernel-checked unconditional theorem for every quadratic number field K, every real D, and the graph on all irreducible elements of its ring of integers, with edges at full Minkowski distance at most D: every connected component is finite and cardinalities admit one bound depending only on K and D. All associates are included. No UFD, class-number-one, or prime-supply hypothesis may remain in the final theorem.
+The unconditional all-quadratic theorem is kernel checked. `./lakew build QuadraticMoat` passed (9988 jobs), including `QuadraticMoat/Main.lean` and the exported library root. The final axiom audit reports only propext, Classical.choice, and Quot.sound.
 
-Status: IN PROGRESS; original Gaussian baseline and new close-pair/restoration modules kernel-checked. The written argument in ../quadratic-moats.tex is a research proof, not yet a Lean-verified generalization. No completion claim until the exact final statement builds and an axiom audit excludes sorryAx and additional mathematical axioms.
+Exact statement: for every number field K with finrank ℚ K = 2 and every real D, all connected components of the graph of irreducible elements of O_K at full Minkowski Euclidean distance ≤ D are finite, with one cardinality bound depending on K,D. Associates are separate vertices. Both real embeddings are included. No UFD or auxiliary prime-supply premise remains.
 
-Scaffold: unmodified copy of the 41 GaussianMoat Lean modules from openai/math commit adc7f1241b42e322a6451854ab7e4b4c146bf78a. Lean 4.34.1; mathlib pin d13f23b723b8a846827a245b89c10fc7d3f11612. Source license retained. The isolated project avoids unrelated original dependencies.
+Endpoints:
+- QuadraticMoat.irreducible_components_uniformly_bounded
+- QuadraticMoat.uniformEndpoint_proved
+- QuadraticMoat.allQuadraticEndpoint_proved
 
-Plan:
-1. Bootstrap pinned Lean/mathlib and build original OAI.NumberTheory.GaussianMoat.Main; audit its axioms.
-2. Freeze exact number-field/irreducible/full-Minkowski theorem statement.
-3. Prove quadratic fixed-norm close-pair finiteness and generic exceptional-vertex restoration.
-4. Introduce arithmetic/lattice interface; port Gaussian-specific sieve geometry while reusing probability and entropy.
-5. Prove quantitative principal-split prime supply from standard analytic and Hilbert class field results.
-6. Instantiate every quadratic field, integrate endpoint, build, and inspect axioms.
+Read README.md for build instructions and the proof map. Final evidence is logs/final-build.log, logs/final-axioms.log and checkpoints/AuditFinal.lean. Earlier module checkpoints are historical; statements there about remaining work are superseded by this completed endpoint.
 
-Orchestration: parent Astra owns integration, interfaces, difficult prime supply and mathematical review; GPT-6.1 Sol agents own focused isolated modules. Agent work must record exact checked commands and residual assumptions. Definitions must not conceal the intended conclusion as hypotheses.
-
-Resume: read this file, TASKS.md, and checkpoints/; inspect git status; run the recorded build command. Never infer success from source scans or TeX compilation. Logs and modules are saved as work proceeds. Subscription was available at initial check (0% weekly usage reported); no reset/credit action taken.
-
-## Checked milestone 2
-
-- Original Gaussian fullMain rebuilt and audited (standard logical axioms only).
-- Native full Minkowski graph, lattice finiteness, close-pair finiteness, exceptional-norm restoration, periodicity and conditional endpoint reduction all build and audit.
-- Native split-prime arithmetic, scaled additive planar geometry, norm domination, signed sieve/rectangle, residue quotient, FreshEntropy, PointEnrichment, SignedResidues and WalkWords build. No UFD assumption.
-- Analytic supply chain (Dedekind zeta pole to regularized rational prime sum, moment/window extraction and dense/separated bins) builds and audits. Hilbert class field fiber-count composition is being checked now; its CFT baseline dependency build passed.
-- Native entropy/scale/telescope integration is active. Exact unconditional final theorem is NOT yet proved.
-
-Resume via checkpoints/current-state.md. Build only recorded named targets while unfinished files are being integrated. Dependency checkouts have intentional compatibility patches saved in patches/; never reset those changes. Bootstrap is reproducible via scripts/bootstrap.py.
+The isolated local Git repository preserves source, dependency pins, patches and checkpoints. Parent integration used the authorized Sol agents for arithmetic, supply, and entropy/restoration branches. Subscription was last checked at 3% weekly usage, with credits and refreshes still available; no limit interruption occurred.

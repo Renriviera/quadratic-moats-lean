@@ -1,0 +1,4 @@
+import QuadraticMoat.PrincipalPrimeFamily
+#print axioms QuadraticMoat.principalSplit_regularized_limit
+#print axioms QuadraticMoat.principalSplit_window_mass
+#print axioms QuadraticMoat.principalSplitPrimeFamily

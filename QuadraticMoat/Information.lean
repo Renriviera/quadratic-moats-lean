@@ -61,12 +61,12 @@ theorem TimeLaw.step_deficit (P : TimeLaw) (s : SplitSieve Fld)
     (hE : (1-e)*(q:ℝ)*s.meanLog ≤ s.pointEntropy P.law (fun a => z a.val) q)
     (hcost : 2*(Real.log 36+2*Real.log (D*n)) ≤ 8*g*q*s.meanLog) :
     (1-e/2-20*g)*(b:ℝ)*s.meanLog ≤
-      s.pointEntropy (P.step z n).law (fun a => z a.val) b := by
+      s.pointEntropy (TimeLaw.step P z n).law (fun a => z a.val) b := by
   exact entropy_step_deficit (by omega) hL hg hg1 hratio le_rfl hE hcost
-    (P.step_enrichment s z hD hstep hn hb hbq hq hfresh)
+    (TimeLaw.step_enrichment P s z hD hstep hn hb hbq hq hfresh)
 
 lemma TimeLaw.advance_difference (P : TimeLaw) (z : ℕ → (𝓞 Fld)) (n : ℕ) :
-    P.advance (differenceKernel z n) = P.step z n := by
+    P.advance (differenceKernel z n) = TimeLaw.step P z n := by
   unfold TimeLaw.advance TimeLaw.step differenceKernel
   congr 1
   dsimp only

@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 
 ROOT = Path(__file__).resolve().parent.parent
-ELAN = Path('/Users/romainpopescu/.elan/bin/elan')
+ELAN = Path(os.environ.get('QUADRATIC_MOAT_ELAN', str(Path.home() / '.elan/bin/elan')))
 ENV = dict(os.environ, ELAN_HOME=str(ROOT / '.toolchains/elan'))
 DEPS = [
     ('ClassFieldTheory', 'https://github.com/n-yamaguchi-0729/ClassFieldTheory.git',

@@ -57,7 +57,7 @@ theorem principalSplit_window_mass
     (fun n hn => smallHilbert_primeNormMultiplicity_real_off_discriminant K E hE hdegree hn)
   refine ⟨c,hc,?_⟩
   filter_upwards [he] with X hX
-  simpa [primeWindow, principalSplitCoefficient, Finset.sum_filter] using hX
+  simpa [primeWindow, principalSplitCoefficient, Finset.sum_filter, ite_div] using hX
 
 /-- The native principal-split family available to every quadratic number
 field. Its only extra argument records the quadratic degree. -/

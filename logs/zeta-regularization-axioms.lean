@@ -1,0 +1,3 @@
+import QuadraticMoat.ZetaRegularization
+#print axioms QuadraticMoat.log_euler_remainder_tsum_limit
+#print axioms QuadraticMoat.norm_euler_remainder_tsum_limit

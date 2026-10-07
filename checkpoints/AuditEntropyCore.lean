@@ -1,0 +1,7 @@
+import QuadraticMoat.KernelComposition
+import QuadraticMoat.WalkWords
+#print axioms QuadraticMoat.TimeLaw.step_enrichment
+#print axioms QuadraticMoat.TimeLaw.step_deficit
+#print axioms QuadraticMoat.TimeLaw.geometric_band_entropy
+#print axioms QuadraticMoat.commonSchedule_subband_entropy
+#print axioms QuadraticMoat.word_residue_smoothing

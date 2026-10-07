@@ -1,0 +1,5 @@
+import QuadraticMoat.DenseBins
+#print axioms QuadraticMoat.PrimeFamily.dyadicMass_le
+#print axioms QuadraticMoat.PrimeFamily.many_dense_bins
+#print axioms QuadraticMoat.PrimeFamily.eventually_dense_split_bins
+#print axioms QuadraticMoat.PrimeFamily.eventually_separated_split_bins

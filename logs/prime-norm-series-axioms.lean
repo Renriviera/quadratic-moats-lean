@@ -1,0 +1,5 @@
+import QuadraticMoat.PrimeNormSeries
+#print axioms QuadraticMoat.primeNorm_series_reindex
+#print axioms QuadraticMoat.primeNormMultiplicity_regularized_limit
+#print axioms QuadraticMoat.eventually_primeNormMultiplicity_window_mass
+#print axioms QuadraticMoat.eventually_window_mass_of_norm_fiber_formula

@@ -1,0 +1,13 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+'QuadraticMoat.EntropyBand.sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.CoverageDerivation.sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.entropyBand_from_suffix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_accurate_band' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_top_band' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_window_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.one_step_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.coverage_from_scalar_guards' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_window_bands' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_window_batch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.planeBall_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
