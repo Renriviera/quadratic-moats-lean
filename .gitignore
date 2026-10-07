@@ -1,0 +1,3 @@
+.lake/
+.toolchains/
+logs/*.log
