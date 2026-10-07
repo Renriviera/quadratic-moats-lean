@@ -1,8 +1,10 @@
-# Work assignments
+# Active work assignments
 
-- Parent: toolchain, baseline, target/interface design, integration, checkpointing.
-- Algebra agent: quadratic trace/norm two-root close-pair theorem, isolated QuadraticMoat/ClosePairs.lean.
-- Graph agent: generic locally finite graph restoration using finite close exceptional pairs and uniformly bounded base components, isolated QuadraticMoat/Restoration.lean.
-- Supply/scaffold agent: exact dependency and prime-supply bridge audit, checkpoints/prime-supply.md; no changes to shared interfaces yet.
+- Parent Astra: PlaneLattice/WalkWords (built); TimeLaw/Information/MultiscaleSchedule/KernelComposition; final integration and checkpoints.
+- close_pairs Sol: HilbertSplit final CFT/count composition, DyadicSieve and residueWeight APIs.
+- prime_supply Sol: PrincipalPrimeFamily, EntropyBand, AccurateScales, BatchParameters and remaining window/batch scalar-to-native integration.
+- restoration Sol: SignedSieve/SignedGeometry/FreshEntropy/PointEnrichment/SignedResidues (built); PassingInformation/WalkPackage/InformationTelescope.
 
-Do not use sorry, admit, opaque mathematical axioms, unsafe proofs, or weaken the advertised final statement. Temporary exploratory files must be clearly marked and excluded from completed claims. Coordinate shared definitions through parent.
+Coordinate shared interfaces. Field type in new ports is Fld; [ctx : PlanarContext Fld] carries additive plane embedding. ForwardKernel and TimeLaw types can reuse original Gaussian namespace types (they contain no Gaussian data); native walk-dependent methods must be proved for O_K.
+
+Do not use sorry, admit, opaque mathematical axioms, unsafe proofs, or weaken the final statement. Temporary exploratory files must be clearly marked and excluded from completed claims.

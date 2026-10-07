@@ -18,14 +18,12 @@ Orchestration: parent Astra owns integration, interfaces, difficult prime supply
 
 Resume: read this file, TASKS.md, and checkpoints/; inspect git status; run the recorded build command. Never infer success from source scans or TeX compilation. Logs and modules are saved as work proceeds. Subscription was available at initial check (0% weekly usage reported); no reset/credit action taken.
 
-## Checked milestone 1
+## Checked milestone 2
 
-- Pinned compiler/mathlib bootstrap completed. `./lakew build OAI.NumberTheory.GaussianMoat.Main` exited 0 (8964 jobs).
-- `#print axioms OAI.GaussianMoat.fullMain`: only propext, Classical.choice, Quot.sound.
-- ClosePairs and ExceptionalNorms build/audits passed: native all-quadratic close-pair finiteness; finite exceptional signed norms without UFD.
-- Restoration builds/audits: generic graph+metric restoration at radius (M+1)D.
-- Model/Lattice/Reduction building under restoration agent: full Minkowski graph, finite balls, uniform degree, reduction to sieve components.
-- PrimeSupply builds/audit passed: generic positive-moment-to-window theorem and regularized Dedekind zeta/log finite-difference limits. PrimeMoments being developed.
-- NOT DONE: generalized signed sieve construction, prime supply arithmetic instantiation, final unconditional all-quadratic theorem. Definitions of endpoints are not proof declarations.
+- Original Gaussian fullMain rebuilt and audited (standard logical axioms only).
+- Native full Minkowski graph, lattice finiteness, close-pair finiteness, exceptional-norm restoration, periodicity and conditional endpoint reduction all build and audit.
+- Native split-prime arithmetic, scaled additive planar geometry, norm domination, signed sieve/rectangle, residue quotient, FreshEntropy, PointEnrichment, SignedResidues and WalkWords build. No UFD assumption.
+- Analytic supply chain (Dedekind zeta pole to regularized rational prime sum, moment/window extraction and dense/separated bins) builds and audits. Hilbert class field fiber-count composition is being checked now; its CFT baseline dependency build passed.
+- Native entropy/scale/telescope integration is active. Exact unconditional final theorem is NOT yet proved.
 
-Agent owners now: close_pairs=SplitArithmetic; restoration=Model/Lattice/Reduction; prime_supply=PrimeMoments; parent=generic lattice/sieve architecture+integration. Read per-module checkpoints before resuming.
+Resume via checkpoints/current-state.md. Build only recorded named targets while unfinished files are being integrated. Dependency checkouts have intentional compatibility patches saved in patches/; never reset those changes. Bootstrap is reproducible via scripts/bootstrap.py.

@@ -1,0 +1,4 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+✔ [8955/8955] Built QuadraticMoat.DenseBins (4.4s)
+Build completed successfully (8955 jobs).

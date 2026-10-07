@@ -1,0 +1,2 @@
+'QuadraticMoat.log_dedekindZeta_re_eq_prime_logs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.all_primeIdeal_regularized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]

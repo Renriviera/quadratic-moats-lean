@@ -1,0 +1,6 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+'QuadraticMoat.PrimeFamily.dyadicMass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.PrimeFamily.many_dense_bins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.PrimeFamily.eventually_dense_split_bins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.PrimeFamily.eventually_separated_split_bins' depends on axioms: [propext, Classical.choice, Quot.sound]

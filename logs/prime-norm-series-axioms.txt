@@ -1,0 +1,4 @@
+'QuadraticMoat.primeNorm_series_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.primeNormMultiplicity_regularized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_primeNormMultiplicity_window_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_window_mass_of_norm_fiber_formula' depends on axioms: [propext, Classical.choice, Quot.sound]

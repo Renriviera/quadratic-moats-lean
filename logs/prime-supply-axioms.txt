@@ -1,0 +1,3 @@
+'QuadraticMoat.log_dedekindZeta_regularized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.scaled_difference_limit_of_regularization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_window_mass_of_moments' depends on axioms: [propext, Classical.choice, Quot.sound]

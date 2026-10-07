@@ -1,0 +1,3 @@
+'QuadraticMoat.summable_log_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.log_moment_limit_of_regularization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.eventually_log_window_mass_of_regularization' depends on axioms: [propext, Classical.choice, Quot.sound]

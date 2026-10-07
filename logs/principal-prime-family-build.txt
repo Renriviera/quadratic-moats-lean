@@ -1,0 +1,24 @@
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+⚠ [9916/9939] Replayed QuadraticMoat.HilbertSplit
+warning: QuadraticMoat/HilbertSplit.lean:473:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: QuadraticMoat/HilbertSplit.lean:479:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [9938/9939] Built ClassFieldTheory.Theorems.FrobeniusAndHilbertClassFields.SmallHilbertClassFieldExists (1.0s)
+✖ [9939/9939] Building QuadraticMoat.PrincipalPrimeFamily (3.4s)
+trace: .> LEAN_PATH=/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/build/lib/lean /Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.toolchains/elan/toolchains/leanprover--lean4---v4.34.1/bin/lean /Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/QuadraticMoat/PrincipalPrimeFamily.lean -o /Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/build/lib/lean/QuadraticMoat/PrincipalPrimeFamily.olean -i /Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/build/lib/lean/QuadraticMoat/PrincipalPrimeFamily.ilean -c /Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/build/ir/QuadraticMoat/PrincipalPrimeFamily.c --setup /Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/build/ir/QuadraticMoat/PrincipalPrimeFamily.setup.json --json
+error: QuadraticMoat/PrincipalPrimeFamily.lean:60:2: Type mismatch: After simplification, term
+  hX
+ has type
+  c * X ≤
+    ∑ x ∈ OAI.GaussianMoat.PrimeLogMass.windowIndices X, (if Nonempty (SplitPrime K x) then Real.log ↑x else 0) / ↑x
+but is expected to have type
+  c * X ≤ ∑ a ∈ OAI.GaussianMoat.PrimeLogMass.windowIndices X, if Nonempty (SplitPrime K a) then Real.log ↑a / ↑a else 0
+warning: QuadraticMoat/PrincipalPrimeFamily.lean:67:16: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Some required targets logged failures:
+- QuadraticMoat.PrincipalPrimeFamily
+error: build failed

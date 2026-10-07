@@ -1,0 +1,10 @@
+import QuadraticMoat
+#print axioms QuadraticMoat.finite_ringOfIntegers_norm_pairs
+#print axioms QuadraticMoat.finite_norm_image_exceptional_irreducibles
+#print axioms QuadraticMoat.uniform_component_bound_of_finite_closeExceptionalEndpoints
+#print axioms QuadraticMoat.uniformEndpoint_of_finiteDivisorNoWalkEndpoint
+#print axioms QuadraticMoat.abs_norm_le_coordinates
+#print axioms QuadraticMoat.quadraticPlanarContext
+#print axioms QuadraticMoat.full_minkowski_walk_many_differences
+#print axioms QuadraticMoat.residueCode_range_card
+#print axioms QuadraticMoat.SplitPrime.not_both_dvd_coordinatePrimitive

@@ -1,0 +1,3 @@
+'QuadraticMoat.summable_higherDegree_inverseNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.higherDegree_primeIdeal_series_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.primeNorm_primeIdeal_regularized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
