@@ -1,0 +1,5 @@
+import QuadraticMoat.BoundedFactors.SoftInformationTelescope
+#print axioms QuadraticMoat.BoundedFactors.hitMass_sum_le
+#print axioms QuadraticMoat.BoundedFactors.soft_smoothed_batch_package_information
+#print axioms QuadraticMoat.BoundedFactors.soft_averaged_batch_package_information
+#print axioms QuadraticMoat.BoundedFactors.soft_schedule_batch_information

@@ -1,0 +1,54 @@
+Bounded distinct prime-ideal factors: proof guide
+
+Statement
+For a number field K of degree two, a natural number b, and a real D,
+consider the graph on nonzero elements alpha of the ring of integers with
+at most b distinct prime ideals dividing (alpha). Edges use the full
+Minkowski Euclidean distance and step bound D. There is a uniform bound
+on the cardinality of every connected component. Both real and imaginary
+quadratic fields are covered; no unique factorization assumption is used.
+
+What is counted
+Model.lean defines omega by normalizedFactors of the principal ideal,
+followed by toFinset.card. Thus multiplicities disappear. Units have count
+zero. Zero is explicitly excluded from Vertex, since Lean's factor list
+of zero is empty. The finite periodic sieve itself does not exclude zero.
+
+Changes from the irreducible proof
+1. SoftLists and SoftInformation replace a no-hit passing list with the
+   candidates hit at most h times among n independent packages. A false
+   candidate with posterior hit probability at least c/4 survives with
+   probability at most exp(-n*c/32), provided h <= n*c/8.
+2. A variable-size list entropy bound pays log 2 plus the missing-true-value
+   probability times log alphabet size. Markov bounds this latter loss by
+   n/h times the one-package true-hit probability. Empty lists are safe
+   because the size term is log(max 1, list cardinality).
+3. SoftWalkPackage transports true hits to actual divisibility, under the
+   same terminal smoothing law for every batch. Charge all available
+   factors in a batch so the charge is independent of entropy selection.
+4. For primes p in [T,2T], choose h = log(2T). The original repetition
+   count already satisfies the threshold restriction. Since log p <= h,
+   the divisor-charge coefficient is at most one. The extra log 2 and
+   terminal-shift errors fit the original positive rate at X >= 10000.
+5. HitBudget sums these charges across pairwise-disjoint batches. For
+   every sampled vertex, there are at most b charged factors in total.
+   The telescoping contradiction therefore pays b once, rather than once
+   per scale. Main chooses enough windows to exceed initial entropy + b.
+6. FactorSupport injects pairwise coprime selected prime generators into
+   distinct prime ideals of (alpha). The finite hit-budget sieve is
+   periodic, contains every Vertex K b, and has no infinite simple walk.
+   Existing lattice periodicity then gives a uniform finite component bound.
+
+Reuse
+The original planar geometry, short-displacement norm estimate, coverage
+derivation, prime supply, entropy telescope, and periodic component theorem
+are imported unchanged. New files live in QuadraticMoat/BoundedFactors/.
+
+Scope limits
+This formalization proves the qualitative theorem for degree exactly two.
+It does not supply an explicit numerical bound in b, arbitrary forbidden
+residue phases, or a higher-degree number-field theorem.
+
+Validation
+Run ./lakew build and ./lakew env lean checkpoints/AuditBoundedFactors.lean.
+The audit displays the final quantified statement and its axiom dependencies.

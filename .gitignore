@@ -1,3 +1,4 @@
 .lake/
 .toolchains/
 logs/*.log
+__pycache__/

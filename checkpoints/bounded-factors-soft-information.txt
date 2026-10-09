@@ -1,0 +1,33 @@
+Milestone 1 (2026-10-09): source drafted, not yet compiled.
+Owned files:
+  QuadraticMoat/BoundedFactors/SoftLists.lean
+  QuadraticMoat/BoundedFactors/SoftInformation.lean
+Namespace: OAI.GaussianMoat.FinLaw
+SoftLists defines hitCount, softList, logMaxCard; proves lower-tail expected size,
+Jensen log-max-card bound, variable_short_list (no uniform cap), iid hit count
+expectation, true-error Markov bound.
+SoftInformation defines joint_soft_entropy, soft_information_lower,
+posterior_soft_information_lower.
+Final contract is A*(cardι−2η)−H−cardι*log2−(n/h)*Σ_i log|G_i|*true-hit-prob
+≤ n*original one-package conditional information.
+Numeric guard includes +1 for empty lists and exp(-n*c_i/32).
+Requires c_i>0, h>0, h≤n*c_i/8. No true-avoidance assumption.
+Pending: compile and resolve elaboration errors. Waiting for root's prescribed
+scripts/lean_locked.py, currently absent. No direct lake builds performed.
+No baseline/native/OAI edits, axioms, or intentional holes.
+Milestone 2: first SoftLists locked compile completed. Four elaboration issues
+were reported: simp unfolded iid_mass before sum_one; positivity on 1≤1+card;
+expect_map rewrote only one side of list-support inequality; omitted g argument
+in reverse expect_map for iid indicator expectation. All have proposed repairs.
+Second locked compile queued. Generic lower and posterior wrapper fully drafted.
+Milestone 3: SoftLists kernel-checks successfully via lean_locked.py (exit 0).
+All seven substantive list/probability lemmas pass, including variable_short_list
+and softList_true_error. Only linter warnings. SoftInformation compile started.
+Milestone 4 FINAL: SoftInformation kernel-checks successfully, exit 0.
+Axiom audit passes for variable_short_list, expected_logMaxCard_softList,
+and posterior_soft_information_lower: only propext, Classical.choice, Quot.sound.
+No sorryAx or added axioms. Root and package worker notified that files are stable.
+Audit scratch checkpoints/.bounded-factors-soft-audit.lean created and checked.
+Final combined durable audit saved in checkpoints/AuditBoundedFactorsSoftInformation.lean.
+It kernel-checks exit0 and verifies all three probability endpoints plus window
+and smoothing constructions have only the standard three axioms.

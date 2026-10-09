@@ -1,0 +1,18 @@
+2026-10-09 milestone1: second-stage ownership transferred from root.
+SoftBatchParameters.lean repaired, kernel-checks exit0: all4 scalar lemmas.
+SoftWindowBatch.lean drafted from native WindowBatch; new certificate imported.
+h=log(2T), cap/cutoff, +1,/32 list, rate with smoothing loss and −log2.
+Direct bandSize≤T bound feeds eventual_soft_smoothing_loss.
+Pending: compile after root SoftBatchCertificate dependent .olean available.
+Milestone2: complete window proof kernel-checks in scratch against exact renamed
+certificate structure, exit0. No proof repairs needed after scalar hpX call fix.
+The scratch file had temporary K/Fld binder typo initially, corrected.
+Final source awaiting actual SoftBatchCertificate.olean dependency.
+Milestone3 FINAL: actual SoftWindowBatch.lean kernel-checks exit0 against real
+SoftBatchCertificate. No holes, sorries, added axioms, or old-module edits.
+Export QuadraticMoat.BoundedFactors.eventually_window_batch (same geometry
+inputs/signature as native version, creates new softened BatchCertificate).
+All four transferred scalar lemmas check. Direct b≤T proof supplies smoothing.
+Durable audit checkpoints/AuditBoundedFactorsSoftInformation.lean checks all five
+selected endpoints; only propext, Classical.choice, Quot.sound.
+Scratch source deleted. Checked .olean artifacts available for integration.
