@@ -1,0 +1,58 @@
+Bounded distinct-factor endpoint branch, 2026-10-09.
+Read README, current-state and astra5 entropy §§1–3. Baseline preserved.
+Model drafted: omega = cardinality of normalized principal ideal support;
+vertices explicitly nonzero, units allowed, valuations unrestricted.
+Planned generic finite-factor charge and coprime split-factor injection;
+periodic sieve stays on all O_K (including zero when budget permits).
+Compilation waiting for shared scripts/lean_locked.py.
+Milestone: all four modules drafted, no placeholders.
+FactorSupport APIs: principalIdeal, finiteFactorHitCount,
+principalIdeal_mem_support, principalIdeal_injOn,
+finiteFactorHitCount_le_omega; SplitSieve selectedFactors pairwise coprime,
+prime, principal-ideal injection, and hit-count bound.
+Periodicity uses full lattice finiteHitSieve F b, common integer period,
+and injective bounded-factor subtype graph map into lattice sieve.
+Endpoint input FiniteHitNoWalkEndpoint K quantifies b and nonnegative D;
+conditional uniform endpoint enlarges arbitrary D to max D 0.
+Waiting for serialized compiler wrapper, all API names communicated.
+Generic batch union arithmetic drafted: selectedFactors_disjoint_of_primes_disjoint,
+biUnion_selectedFactors_pairwise_coprime and biUnion_selectedFactors_prime.
+Serialized compiler wrapper available; Model check queued under shared lock.
+Model first check failed only omega_zero/unit simp goals (primeFactors bot/top).
+Repaired with explicit Ideal 0/1 and normalizedFactors_zero/one rewrites.
+Model compiled cleanly. FactorSupport first check: Finset.Pairwise unavailable
+(use coerced Set.Pairwise), span_singleton_le_iff_mem takes ideal explicitly.
+Updated FactorSupport/Periodicity/Endpoint signatures to Set.Pairwise.
+Milestone verified: Model, FactorSupport and Periodicity compile via lean_locked.py.
+No errors, only unused NumberField variable lint warnings in two arithmetic lemmas.
+Endpoint compilation queued; generic union charge APIs sent to budget worker.
+All four initial modules compiled. AuditBoundedEndpoint.lean verified three key
+conditional/support/union declarations depend only on propext, Classical.choice,
+Quot.sound. Added and compiled dyadic batch prime/factor disjointness helpers.
+Root assigned next stage SoftSieveCertificate and Main assembly.
+SoftSieveCertificate drafted; root SoftBatchCertificate upstream not yet compiled.
+Next-stage complete drafts:
+SoftSieveCertificate q.factors = precedingFactors union; q.period product of
+batch periods; batch injectivity gives disjoint prime/factor families, generic
+arithmetic proves prime, pairwise coprime, period divisibility and support count.
+Main copied reusable baseline windows/smoothing proof; W beats logplane+1+B,
+adds binEnum injectivity, exact unconditional endpoint names provided.
+Waiting for root SoftBatchCertificate/SoftWindowBatch compilation to check drafts.
+SoftSieveCertificate first check failed only period def needs noncomputable,
+because dyadicSieve packet choice is noncomputable. Added annotation.
+FINAL BRANCH HANDOFF, 2026-10-09:
+All six owned delivered modules compile exit 0 via scripts/lean_locked.py:
+Model.lean, FactorSupport.lean (including dyadic disjoint helpers),
+Periodicity.lean, Endpoint.lean, SoftSieveCertificate.lean, Main.lean.
+Main compiled against root SoftBatchCertificate + worker SoftWindowBatch.
+Unconditional export:
+QuadraticMoat.BoundedFactors.bounded_distinct_factors_components_uniformly_bounded
+(K : Type) [Field K] [NumberField K] (hdegree : finrank ℚ K = 2)
+(b : ℕ) (D : ℝ) : ∃ M, ∀ α : Vertex K b,
+(component K b D α).Finite ∧ (component K b D α).ncard ≤ M.
+Also finiteHitNoWalkEndpoint_proved and uniformEndpoint_proved available.
+Conditional/support/union audit passed only propext Classical.choice Quot.sound.
+No sorries/new axioms; source grep clean. Baseline sources preserved.
+Known harmless lint warnings: unused NumberField in two generic arithmetic lemmas,
+implicit j use in period_pos, letI style in final field instantiation.
+No further compile activity: root owns full library build and unconditional audit.

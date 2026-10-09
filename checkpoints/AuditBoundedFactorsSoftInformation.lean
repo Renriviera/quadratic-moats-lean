@@ -1,0 +1,8 @@
+import QuadraticMoat.BoundedFactors.SoftInformation
+import QuadraticMoat.BoundedFactors.SoftWindowBatch
+
+#print axioms OAI.GaussianMoat.FinLaw.variable_short_list
+#print axioms OAI.GaussianMoat.FinLaw.expected_logMaxCard_softList
+#print axioms OAI.GaussianMoat.FinLaw.posterior_soft_information_lower
+#print axioms QuadraticMoat.BoundedFactors.eventually_soft_smoothing_loss
+#print axioms QuadraticMoat.BoundedFactors.eventually_window_batch

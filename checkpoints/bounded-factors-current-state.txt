@@ -1,0 +1,77 @@
+Bounded distinct prime-ideal factors: COMPLETE AND AUDITED
+
+Final status, 2026-10-09:
+  ./lakew build passed (10002 jobs).
+  ./lakew env lean checkpoints/AuditBoundedFactors.lean passed.
+  Final theorem:
+  QuadraticMoat.BoundedFactors.bounded_distinct_factors_components_uniformly_bounded
+  quantifies over K, [Field K], [NumberField K], degree=2, natural b, real D.
+  No auxiliary prime supply, planar-context, or finite-sieve assumptions remain.
+  Axiom dependencies: propext, Classical.choice, Quot.sound only.
+  No sorry or added axioms in the new proof chain.
+  Library root imports the new endpoint alongside the original theorem.
+  Final available core usage: 93 percent remaining. Threshold never reached.
+  Sources, audits and this complete handoff are saved locally.
+
+Scope: qualitative uniform cardinality bound; units included, zero excluded,
+distinct prime-ideal factors counted without multiplicity. Degree exactly two.
+See bounded-factors-proof-guide.txt and bounded-factors-validation.txt.
+
+Historical implementation notes follow.
+
+Baseline: commit 46e6c8d, unconditional quadratic irreducible moat theorem.
+Baseline axiom audit passed with propext, Classical.choice, Quot.sound only.
+Target: for each degree-two number field, natural b, and real D, nonzero
+elements with at most b DISTINCT prime-ideal divisors have uniformly
+bounded finite components in the full Minkowski metric. Valuations unbounded.
+
+Ownership (2026-10-09):
+  sol61_soft_information: SoftLists.lean, SoftInformation.lean.
+  sol61_package_budget: HitBudget.lean, SoftWalkPackage.lean,
+    SoftInformationTelescope.lean.
+  sol61_bounded_endpoint: Model.lean, FactorSupport.lean,
+    Periodicity.lean, Endpoint.lean.
+  root: soft certificates, numerical parameter guards, window assembly,
+    final unconditional endpoint, integration and axiom audit.
+All new Lean modules live in QuadraticMoat/BoundedFactors/.
+
+Use python3 scripts/lean_locked.py <relative-module>.lean for serialized
+module compilation. This emits imports in .lake/build/lib/lean. Preserve
+existing dependency patches. No concurrent full Lake builds.
+
+User requests saving work if available usage falls below 10 percent.
+Initial relevant usage: 95 percent remaining. Check periodically; save
+all new sources, exact remaining obligations and build status before pause.
+Never consume account reset credits without separate user authorization.
+
+Mathematical change: soft lists permit at most h true hits. Their entropy
+bound pays log(2) per coordinate and n/h times the weighted true-hit mass.
+Charge all factors in each selected batch to one common terminal law;
+disjoint batches have total hit mass at most b. Add this bounded loss to
+the terminal entropy excess and reuse the generic telescope/periodicity.
+
+Preserve unrelated untracked checkpoints/prime-supply-expository-* files.
+Do not edit the user's open quadratic-moats.tex for this coding request.
+
+Progress 2026-10-09 04:14 UTC:
+  Kernel-checked: Model, FactorSupport, Periodicity, Endpoint (conditional),
+  SoftLists, SoftInformation, HitBudget, SoftBatchParameters.
+  Soft probability axiom audit: only propext, Classical.choice, Quot.sound.
+  Package/transport modules drafted, compiler repair ongoing.
+  Root SoftBatchCertificate drafted, awaits transport import.
+
+Second-stage ownership:
+  soft_information worker: SoftBatchParameters (root draft transferred),
+    SoftWindowBatch using fixed h=log(2T), charge coefficient 1.
+  endpoint worker: SoftSieveCertificate and BoundedFactors/Main.
+  package worker: finish package/schedule compilation.
+  root: SoftBatchCertificate, library export, complete build/axiom audit.
+
+Numerical simplification verified: existing repetitions suffice; threshold
+h=log(2T) dominates every tested log p and meets the lower-tail cutoff.
+The final excess only pays the divisor budget B once. Additional smoothing
+and log(2) losses fit the unchanged positive rate for X>=10000.
+
+Latest available usage: 94 percent remaining (6 percent used).
+At that intermediate checkpoint the endpoint was conditional. New Main and
+the final audit have since discharged the remaining analytical hypothesis.

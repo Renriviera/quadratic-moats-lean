@@ -1,0 +1,29 @@
+Bounded distinct factors: final validation, 2026-10-09
+
+./lakew build: EXIT 0
+Build completed successfully (10002 jobs).
+
+./lakew env lean checkpoints/AuditBoundedFactors.lean: EXIT 0
+
+warning: AINTLIB: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/AINTLIB' has local changes
+warning: ClassFieldTheory: repository '/Users/romainpopescu/Documents/ChatGPT/Math/research/quadratic-moats/lean/.lake/packages/ClassFieldTheory' has local changes
+QuadraticMoat.BoundedFactors.omega.{u_1} (K : Type u_1) [Field K] [NumberField K] (α : NumberField.RingOfIntegers K) : ℕ
+QuadraticMoat.BoundedFactors.Vertex.{u_1} (K : Type u_1) [Field K] [NumberField K] (b : ℕ) : Type u_1
+QuadraticMoat.BoundedFactors.bounded_distinct_factors_components_uniformly_bounded (K : Type) [Field K] [NumberField K]
+  (hdegree : Module.finrank ℚ K = 2) (b : ℕ) (D : ℝ) :
+  ∃ M,
+    ∀ (α : QuadraticMoat.BoundedFactors.Vertex K b),
+      (QuadraticMoat.BoundedFactors.component K b D α).Finite ∧
+        (QuadraticMoat.BoundedFactors.component K b D α).ncard ≤ M
+'OAI.GaussianMoat.FinLaw.posterior_soft_information_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.BoundedFactors.finiteFactorHitCount_le_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.BoundedFactors.hitMass_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.BoundedFactors.soft_schedule_batch_information' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'QuadraticMoat.BoundedFactors.certificate_no_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.BoundedFactors.finiteHitNoWalkEndpoint_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.BoundedFactors.uniformEndpoint_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuadraticMoat.BoundedFactors.bounded_distinct_factors_components_uniformly_bounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

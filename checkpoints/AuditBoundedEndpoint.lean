@@ -1,0 +1,4 @@
+import QuadraticMoat.BoundedFactors.Endpoint
+#print axioms QuadraticMoat.BoundedFactors.uniformEndpoint_of_finiteHitNoWalkEndpoint
+#print axioms QuadraticMoat.BoundedFactors.finiteFactorHitCount_le_omega
+#print axioms QuadraticMoat.SplitSieve.biUnion_selectedFactors_pairwise_coprime
